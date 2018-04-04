@@ -1,4 +1,4 @@
-#include<iostream>
+##include<iostream>
 using namespace std;
 
 // Class for the structure of the node
@@ -217,12 +217,9 @@ void deletenode(int d)
       	child=temp->left;
       	if(child->right==NULL)
       	{
-      		child->parent=amma;
-      		grandchild=temp->right;
-     		child->right=grandchild;
-      		grandchild->parent=child;
-                        temp=NULL;
-                        delete temp;
+      		temp->data=child->data;
+      		temp->left=NULL;
+      		delete child;
       	}
       	else
       	{
@@ -288,7 +285,7 @@ int a,n,k,achoice,bchoice,s,d;
 	cout<<"\n Do you wanna do somemore actions?  If yes press 1 if no press 0";
 	cin>>bchoice;
 	}while(bchoice==1);
-	deletenode(3);
+	cout<<"\n";
 	a=display(root);
 	return 0;
 }
